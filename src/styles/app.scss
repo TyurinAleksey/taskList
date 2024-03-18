@@ -1,0 +1,116 @@
+/*Обнуление*/
+*{padding: 0;margin: 0;border: 0;}
+*,*:before,*:after{-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+nav,footer,header,aside{display: block;}
+html,body{height:100%;width:100%;font-size:100%;line-height:1;font-size:14px;-ms-text-size-adjust:100%;-moz-text-size-adjust:100%;-webkit-text-size-adjust:100%;}
+input,button,textarea{font-family:inherit;}
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner {padding:0;border:0;}
+a,a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
+/* ----------*/
+
+body {
+  background: #00ffff;
+}
+
+.App {
+  display: flex;
+  margin: 0 auto;
+  width: 80%;
+}
+
+.sidebar {
+  width: 20%;
+  &__sorted {
+    margin-top: 20px;
+    width: 100%;
+    background: white;
+    padding: 20px;
+    border-radius: 7px;
+    h3 {
+      font-weight: 600;
+    }
+  }
+}
+
+.main {
+  width: 100%;
+  padding: 20px;
+  &__addTask {
+    background: #32cd32;
+    padding: 20px 30px;
+    border-radius: 7px;
+  }
+  &__taskItem {
+    cursor: pointer;
+    margin-top: 20px;
+    padding: 20px;
+    background: white;
+    border-radius: 7px;
+    &_title {
+      font-size: 26px;
+      font-weight: 600;
+    }
+  }
+}
+
+.modalWindow {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.5s;
+  &.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+  &__input {
+    font-size: 18px;
+    width: 100%;
+    padding: 5px 15px;
+    margin: 5px 0;
+    border: 1px solid #00ffff;
+    transition: font-size .5s;
+    &:hover, &:focus {
+      font-size: 24px;
+    }
+  }
+  &__getTask {
+    font-size: 18px;
+    padding: 5px 15px;
+    margin: 5px 0;
+    border: 1px solid #00ffff;
+    border-radius: 7px;
+    background: none;
+    transition: 0.5s;
+    &:hover {
+      background: #00ffff;
+    }
+  }
+}
+
+.modal__content {
+  padding: 20px;
+  border-radius: 12px;
+  background-color: #fff;
+  width: 50vw;
+  transform: scale(0.5);
+  transition: 0.4s all;
+  &.active {
+    transform: scale(1);
+  }
+}
